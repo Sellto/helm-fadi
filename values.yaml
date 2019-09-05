@@ -15,7 +15,7 @@ spark:
     Replicas: 0
 
 superset:
-  enabled: true
+  enabled: false
   persistence:
     enabled: true
   service:
@@ -69,12 +69,12 @@ superset:
     AUTH_LDAP_UID_FIELD = "cn"
 
 postgresql:
-  enabled: true
+  enabled: false
   persistence:
     enabled: true
 
 minio:
-  enabled: true
+  enabled: false
   persistence:
     enabled: true
   service:
@@ -86,7 +86,7 @@ minio:
     hosts: [minio.fadi.minikube]
 
 grafana:
-  enabled: true
+  enabled: false
   service:
     type: NodePort
   ingress:
@@ -201,7 +201,7 @@ jupyterhub:
     pathSuffix: ''
 
 nifi:
-  enabled: true
+  enabled: false
   service:
     loadBalancer:
       enabled: true
@@ -215,7 +215,7 @@ nifi:
   postStart: /opt/nifi/psql; wget -P /opt/nifi/psql https://jdbc.postgresql.org/download/postgresql-42.2.6.jar
 
 pgadmin:
-  enabled: true
+  enabled: false
   service:
     type: NodePort
   ingress:
@@ -225,7 +225,7 @@ pgadmin:
     hosts: [pgadmin.fadi.minikube]
 
 openldap:
-  enabled: true
+  enabled: false
   env:
     LDAP_ORGANISATION: "Cetic"
     LDAP_DOMAIN: "ldap.cetic.be"
@@ -243,7 +243,7 @@ openldap:
       # You can find an example ldif file.
 
 phpldapadmin:
-  enabled: true
+  enabled: false
   service:
     type: NodePort
   env:
